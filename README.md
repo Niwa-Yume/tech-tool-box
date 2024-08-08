@@ -15,38 +15,9 @@ Tech Tool Box est une plateforme innovante destinée à rassembler et à organis
 
 ### Frontend : Angular
 - **Framework** : Angular est utilisé pour développer une interface utilisateur dynamique et réactive.
-- **Composants Principaux** :
-  - **HeaderComponent** : Barre de navigation avec le logo et les liens vers les principales sections du site.
-  - **HomeComponent** : Page d’accueil présentant le site et ses fonctionnalités principales.
-  - **UserProfileComponent** : Affiche les informations et les ressources favorites de l'utilisateur.
-  - **AdminComponent** : Interface de gestion des ressources et des utilisateurs.
-  - **CategoryComponent** : Liste des ressources pour une catégorie spécifique.
-  - **ResourceDetailComponent** : Détails d'une ressource individuelle.
-
 ### Backend : Supabase
 - **Base de Données** : Supabase est utilisé comme backend pour gérer les opérations CRUD (Create, Read, Update, Delete) sur les ressources et les utilisateurs.
 - **Authentification** : Gestion de l'authentification et de l'autorisation des utilisateurs.
-
-### Structure des Données
-- **Ressource** :
-  - `id` (identifiant unique)
-  - `title` (titre)
-  - `description` (description)
-  - `category` (catégorie)
-  - `url` (lien URL)
-  - `ratings` (notes)
-  - `addedBy` (id de l'utilisateur ayant ajouté la ressource)
-- **Utilisateur** :
-  - `id` (identifiant unique)
-  - `username` (nom d'utilisateur)
-  - `email` (adresse email)
-  - `password` (mot de passe hashé)
-  - `favoriteResources` (liste des identifiants des ressources favorites)
-
-## Clés API
-
-Pour utiliser Supabase, configurez votre environnement avec la clé API suivante :
- -eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB6enFyZ3RxZnhqbG5ycHpiYXdmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjwNDM0MDMsImV4cCI6MjAzODYxOTQwM30.U5sfg0WhMM-DfsPL6kY0bgNwTP_Od_fDdlPfwk2SPTY
 
 - **URL du Projet Supabase** : `https://pzzqrgtqfxjlnrpzbawf.supabase.co`
 
