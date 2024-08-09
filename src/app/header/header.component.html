@@ -1,27 +1,54 @@
-<header>
-    <div class="container">
-        <nav>
-            <div class="logo">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M3 3h18v18H3zM21 14H3M14 21V3M9 8h1M9 12h1M9 16h1" />
-                </svg>
-                Tech Tool Box
+
+<div class="max-w-7xl mx-auto p-4 bg-gray-100">
+    <div class="flex items-center justify-between">
+        <div class="relative group">
+            <div
+                class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center text-white text-2xl cursor-pointer">
+                🧰
             </div>
-            <div class="nav-links">
-                <a href="#">Accueil</a>
-                <a href="#">Catégories</a>
-                <a href="#">Profil Utilisateur</a>
-                <a href="#">Admin</a>
+            <div class="hidden group-hover:block absolute top-full left-0 bg-white p-2 rounded-md shadow-md">
+                <span class="text-xl mr-2">AI</span>
+                <span class="text-xl mr-2">Programmation</span>
+                <span class="text-xl mr-2">Devops</span>
+                <span class="text-xl">Web Developement</span>
+                <span class="text-xl">Data Science</span>
+                <span class="text-xl">Logiciel</span>
+                <span class="text-xl">Design</span>
+                <span class="text-xl">Bureautique(mail,traitement de texte, extension)</span>
             </div>
-            <div class="search-bar">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-                <input type="text" placeholder="Rechercher des ressources...">
-            </div>
+        </div>
+
+        <nav class="space-x-4">
+            <a href="https://websim.ai/home"
+                class="text-gray-700 hover:bg-gray-200 px-3 py-2 rounded-md transition duration-300">Accueil</a>
+            <a href="https://websim.ai/services"
+                class="text-gray-700 hover:bg-gray-200 px-3 py-2 rounded-md transition duration-300">Liste des ressources</a>
+            <a href="https://websim.ai/about"
+                class="text-gray-700 hover:bg-gray-200 px-3 py-2 rounded-md transition duration-300">À propos</a>
+            <a href="https://websim.ai/contact"
+                class="text-gray-700 hover:bg-gray-200 px-3 py-2 rounded-md transition duration-300">Proposer un outil</a>
         </nav>
+
+        <div class="relative">
+            <span class="text-2xl cursor-pointer">🔍</span>
+            <div class="hidden absolute top-full right-0 bg-white min-w-[200px] rounded-md shadow-md z-10">
+                <!-- Remplacez ceci par votre logique de recherche -->
+                <div class="p-2 hover:bg-gray-100 cursor-pointer">Résultat de recherche</div>
+            </div>
+
+        </div>
+
+        <div class="relative">
+            <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white cursor-pointer">
+                U
+            </div>
+            <div class="hidden absolute top-full right-0 bg-white min-w-[150px] rounded-md shadow-md z-10">
+                <a href="https://websim.ai/profile" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profil</a>
+                <a href="https://websim.ai/settings"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Paramètres</a>
+                <a href="https://websim.ai/logout"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Déconnexion</a>
+            </div>
+        </div>
     </div>
-</header>
+</div>

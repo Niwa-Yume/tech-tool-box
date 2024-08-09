@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+.hero-section {
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-title {
+    animation: fadeInDown 1s ease forwards;
+}
+
+.slogan {
+    animation: fadeInUp 1s ease forwards 0.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.resources-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+@media (max-width: 1200px) {
+    .resources-container {
+        flex-wrap: wrap;
+    }
+
+    .resource-card {
+        flex-basis: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .slogan {
+        font-size: 1.2rem;
+    }
+
+    .tech-object-container {
+        width: 90%;
+        height: 0;
+        padding-bottom: 67.5%;
+    }
+
+    .resources-container {
+        flex-direction: column;
+    }
+
+    .resource-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .slogan {
+        font-size: 1rem;
+    }
+}
