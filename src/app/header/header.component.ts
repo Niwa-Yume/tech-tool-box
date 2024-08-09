@@ -5,8 +5,15 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  searchQuery: string = '';
 
+  onSearchChange(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    this.searchQuery = inputElement.value;
+    // Ajoutez ici la logique pour filtrer les résultats en fonction de `searchQuery`
+    console.log('Search query:', this.searchQuery);
+  }
 }
