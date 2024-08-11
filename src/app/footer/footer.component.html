@@ -1,80 +1,58 @@
-<hr>
-<div x-data="footerComponent()">
-    <footer class="text-gray-500 px-4 py-5 max-w-screen-xl mx-auto md:px-8">
-        <div class="max-w-lg sm:mx-auto sm:text-center">
-            <div class="flex justify-center mb-4">
-                <div class="w-24 h-24 flex items-center justify-center">
-                    <img src="assets/logo/icon.svg" alt="Tech Tool Box logo" class="w-full h-full object-contain">
-                </div>
-            </div>
-            <p class="leading-relaxed mt-2 text-[15px]">
-                Tech Tool Box va devenir la référence incontournable pour les développeurs, offrant une collection
-                complète d'outils et de ressources pour améliorer la productivité et simplifier les processus de
-                développement.
-            </p>
-        </div>
-        <div class="mt-8 items-center justify-between sm:flex">
-            <div class="mt-4 sm:mt-0">
-                &copy; 2024 Tech Tool Box All rights reserved.
-            </div>
-            <div class="mt-6 sm:mt-0">
-                <ul class="flex items-center space-x-4">
-                    <!-- X (anciennement Twitter) -->
-                    <li class="w-10 h-10 border rounded-full flex items-center justify-center">
-                        <a :href="socialLinks.x">
-                            <svg class="svg-icon w-6 h-6 text-blue-400" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23.954 4.569c-.885.392-1.83.656-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.949.555-2.002.959-3.127 1.184-.897-.957-2.178-1.555-3.594-1.555-2.719 0-4.924 2.204-4.924 4.917 0 .39.045.765.128 1.124-4.092-.205-7.719-2.165-10.141-5.144-.424.722-.666 1.562-.666 2.457 0 1.693.861 3.183 2.169 4.061-.798-.025-1.55-.244-2.207-.608v.061c0 2.364 1.681 4.337 3.911 4.784-.409.111-.84.171-1.285.171-.314 0-.618-.03-.916-.086.617 1.926 2.413 3.328 4.543 3.367-1.664 1.307-3.759 2.086-6.041 2.086-.392 0-.779-.023-1.158-.068 2.159 1.384 4.723 2.191 7.479 2.191 8.97 0 13.872-7.429 13.872-13.872 0-.211-.005-.423-.014-.634.952-.688 1.779-1.549 2.437-2.533z"/>
-                            </svg>
-                        </a>
-                    </li>
-
-                    <!-- Instagram -->
-                    <li class="w-10 h-10 border rounded-full flex items-center justify-center">
-                        <a :href="socialLinks.instagram">
-                            <svg class="svg-icon w-6 h-6 text-pink-500" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.332 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.332 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.332-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.332-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.262 0-3.67.012-4.947.071-1.538.065-2.925.38-4.002 1.457-1.078 1.078-1.393 2.464-1.457 4.002-.059 1.277-.071 1.685-.071 4.947s.012 3.67.071 4.947c.065 1.538.38 2.925 1.457 4.002 1.078 1.078 2.464 1.393 4.002 1.457 1.277.059 1.685.071 4.947.071s3.67-.012 4.947-.071c1.538-.065 2.925-.38 4.002-1.457 1.078-1.078 1.393-2.464 1.457-4.002.059-1.277.071-1.685.071-4.947s-.012-3.67-.071-4.947c-.065-1.538-.38-2.925-1.457-4.002-1.078-1.078-2.464-1.393-4.002-1.457-1.277-.059-1.685-.071-4.947-.071zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.124c-2.185 0-3.962-1.777-3.962-3.962s1.777-3.962 3.962-3.962 3.962 1.777 3.962 3.962-1.777 3.962-3.962 3.962zm6.406-11.845c-1.08 0-1.955-.875-1.955-1.955s.875-1.955 1.955-1.955 1.955.875 1.955 1.955-.875 1.955-1.955 1.955z"/>
-                            </svg>
-                        </a>
-                    </li>
-
-                    <!-- Portfolio (Site Web) -->
-                    <li class="w-10 h-10 border rounded-full flex items-center justify-center">
-                        <a :href="socialLinks.portfolio">
-                            <svg class="svg-icon w-6 h-6 text-gray-600" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 0C5.383 0 0 5.383 0 12c0 6.617 5.383 12 12 12s12-5.383 12-12c0-6.617-5.383-12-12-12zm.008 22.248c-5.641 0-10.235-4.592-10.235-10.235s4.592-10.235 10.235-10.235 10.235 4.592 10.235 10.235-4.592 10.235-10.235 10.235zm5.476-11.145c-.28-.131-.628-.061-.854.173-1.365 1.396-2.584 2.984-4.637 3.188-.674.067-1.12-.495-.855-1.122.372-.87 1.084-1.664 1.515-2.514.058-.115.105-.24.125-.37.122-.863-.605-1.527-1.508-1.355-.976.18-1.832.84-2.417 1.607-.12.157-.196.362-.199.57-.008.496.398.855.872.855h.017c.461 0 .847-.368.855-.835.018-.272.223-.441.417-.583.637-.456 1.253-.599 1.478-.466.207.123.217.47.089.745-.372.786-.92 1.492-1.4 2.242-.748 1.171-.567 2.547.419 3.301.842.652 1.826.646 2.841.6 2.084-.092 3.643-1.388 4.883-2.854.32-.37.563-.849.883-1.229.122-.141.179-.326.153-.506-.025-.184-.127-.343-.281-.433z"/>
-                            </svg>
-                        </a>
-                    </li>
-
-                    <!-- LinkedIn -->
-                    <li class="w-10 h-10 border rounded-full flex items-center justify-center">
-                        <a :href="socialLinks.linkedin">
-                            <svg class="svg-icon w-6 h-6 text-blue-700" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19.615 0H4.385A4.384 4.384 0 000 4.385v15.23A4.384 4.384 0 004.385 24h15.23A4.384 4.384 0 0024 19.615V4.385A4.384 4.384 0 0019.615 0zm-12.46 20.462H4.92V9h2.235v11.462zM6.037 7.845a1.292 1.292 0 11-.002-2.583 1.292 1.292 0 01.002 2.583zm14.425 12.617h-2.236V14.82c0-1.345-.026-3.074-1.874-3.074-1.875 0-2.163 1.466-2.163 2.974v6.742h-2.235V9h2.146v1.566h.03c.299-.567 1.034-1.164 2.128-1.164 2.276 0 2.696 1.498 2.696 3.447v7.614z"/>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
+<footer class="text-gray-500 px-4 py-5 max-w-screen-xl mx-auto md:px-8">
+    <div class="max-w-lg sm:mx-auto sm:text-center">
+        <div class="flex justify-center mb-4">
+            <div class="w-24 h-24 flex items-center justify-center">
+                <img src="assets/logo/icon.svg" alt="Tech Tool Box logo" class="w-full h-full object-contain">
             </div>
         </div>
-    </footer>
-</div>
-<style scoped>
-    .svg-icon path,
-    .svg-icon polygon,
-    .svg-icon rect {
-        fill: currentColor;
-    }
-</style>
-<script>
-    function footerComponent() {
-        return {
-            socialLinks: {
-                x: "https://x.com/Niwa76156428",  // Remplacez par votre lien X
-                instagram: "https://www.instagram.com/niwa_yume",  // Remplacez par votre lien Instagram
-                portfolio: "https://portfolio-design-figma-alpha.vercel.app/",  // Remplacez par votre lien de portfolio
-                linkedin: "https://www.linkedin.com/in/julien-castro/",  // Remplacez par votre lien LinkedIn
-            },
-        };
-    }
-</script>
+        <p class="leading-relaxed mt-2 text-[15px]">
+            Tech Tool Box va devenir la référence incontournable pour les développeurs, offrant une collection
+            complète d'outils et de ressources pour améliorer la productivité et simplifier les processus de
+            développement.
+        </p>
+    </div>
+    <div class="mt-8 items-center justify-between sm:flex">
+        <div class="mt-4 sm:mt-0">
+            &copy; 2024 Tech Tool Box All rights reserved.
+        </div>
+        <div class="mt-6 sm:mt-0">
+            <ul class="flex items-center space-x-4">
+                <!-- X (anciennement Twitter) -->
+                <li class="w-10 h-10 border rounded-full flex items-center justify-center">
+                    <a href="javascript:void(0);" (click)="openLink(socialLinks.x)">
+                        <svg class="svg-icon w-6 h-6 text-blue-400" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.954 4.569c-.885.392-1.83.656-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.949.555-2.002.959-3.127 1.184-.897-.957-2.178-1.555-3.594-1.555-2.719 0-4.924 2.204-4.924 4.917 0 .39.045.765.128 1.124-4.092-.205-7.719-2.165-10.141-5.144-.424.722-.666 1.562-.666 2.457 0 1.693.861 3.183 2.169 4.061-.798-.025-1.55-.244-2.207-.608v.061c0 2.364 1.681 4.337 3.911 4.784-.409.111-.84.171-1.285.171-.314 0-.618-.03-.916-.086.617 1.926 2.413 3.328 4.543 3.367-1.664 1.307-3.759 2.086-6.041 2.086-.392 0-.779-.023-1.158-.068 2.159 1.384 4.723 2.191 7.479 2.191 8.97 0 13.872-7.429 13.872-13.872 0-.211-.005-.423-.014-.634.952-.688 1.779-1.549 2.437-2.533z"/>
+                        </svg>
+                    </a>
+                </li>
+
+                <!-- Instagram -->
+                <li class="w-10 h-10 border rounded-full flex items-center justify-center">
+                    <a href="javascript:void(0);" (click)="openLink(socialLinks.instagram)">
+                        <svg class="svg-icon w-6 h-6 text-pink-500" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.332 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.332 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.332-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.332-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.262 0-3.67.012-4.947.071-1.538.065-2.925.38-4.002 1.457-1.078 1.078-1.393 2.464-1.457 4.002-.059 1.277-.071 1.685-.071 4.947s.012 3.67.071 4.947c.065 1.538.38 2.925 1.457 4.002 1.078 1.078 2.464 1.393 4.002 1.457 1.277.059 1.685.071 4.947.071s3.67-.012 4.947-.071c1.538-.065 2.925-.38 4.002-1.457 1.078-1.078 1.393-2.464 1.457-4.002.059-1.277.071-1.685.071-4.947s-.012-3.67-.071-4.947c-.065-1.538-.38-2.925-1.457-4.002-1.078-1.078-2.464-1.393-4.002-1.457-1.277-.059-1.685-.071-4.947-.071zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.124c-2.185 0-3.962-1.777-3.962-3.962s1.777-3.962 3.962-3.962 3.962 1.777 3.962 3.962-1.777 3.962-3.962 3.962zm6.406-11.845c-1.08 0-1.955-.875-1.955-1.955s.875-1.955 1.955-1.955 1.955.875 1.955 1.955-.875 1.955-1.955 1.955z"/>
+                        </svg>
+                    </a>
+                </li>
+
+                <!-- Portfolio (Site Web) -->
+                <li class="w-10 h-10 border rounded-full flex items-center justify-center">
+                    <a href="javascript:void(0);" (click)="openLink(socialLinks.portfolio)">
+                        <svg class="svg-icon w-6 h-6 text-gray-600" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0C5.383 0 0 5.383 0 12c0 6.617 5.383 12 12 12s12-5.383 12-12c0-6.617-5.383-12-12-12zm.008 22.248c-5.641 0-10.235-4.592-10.235-10.235s4.592-10.235 10.235-10.235 10.235 4.592 10.235 10.235-4.592 10.235-10.235 10.235zm5.476-11.145c-.28-.131-.628-.061-.854.173-1.365 1.396-2.584 2.984-4.637 3.188-.674.067-1.12-.495-.855-1.122.372-.87 1.084-1.664 1.515-2.514.058-.115.105-.24.125-.37.122-.863-.605-1.527-1.508-1.355-.976.18-1.832.84-2.417 1.607-.12.157-.196.362-.199.57-.008.496.398.855.872.855h.017c.461 0 .847-.368.855-.835.018-.272.223-.441.417-.583.637-.456 1.253-.599 1.478-.466.207.123.217.47.089.745-.372.786-.92 1.492-1.4 2.242-.748 1.171-.567 2.547.419 3.301.842.652 1.826.646 2.841.6 2.084-.092 3.643-1.388 4.883-2.854.32-.37.563-.849.883-1.229.122-.141.179-.326.153-.506-.025-.184-.127-.343-.281-.433z"/>
+                        </svg>
+                    </a>
+                </li>
+
+                <!-- LinkedIn -->
+                <li class="w-10 h-10 border rounded-full flex items-center justify-center">
+                    <a href="javascript:void(0);" (click)="openLink(socialLinks.linkedin)">
+                        <svg class="svg-icon w-6 h-6 text-blue-700" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.615 0H4.385A4.384 4.384 0 000 4.385v15.23A4.384 4.384 0 004.385 24h15.23A4.384 4.384 0 0024 19.615V4.385A4.384 4.384 0 0019.615 0zm-12.46 20.462H4.92V9h2.235v11.462zM6.037 7.845a1.292 1.292 0 11-.002-2.583 1.292 1.292 0 01.002 2.583zm14.425 12.617h-2.236V14.82c0-1.345-.026-3.074-1.874-3.074-1.875 0-2.163 1.466-2.163 2.974v6.742h-2.235V9h2.146v1.566h.03c.299-.567 1.034-1.164 2.128-1.164 2.276 0 2.696 1.498 2.696 3.447v7.614z"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
