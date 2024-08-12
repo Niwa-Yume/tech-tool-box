@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  standalone: true,
-  imports: [],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  standalone: true,
+  imports: [CommonModule]
 })
 export class HeaderComponent {
-  searchQuery: string = '';
+  isMenuOpen = false;
 
-  onSearchChange(event: Event) {
-    const inputElement = event.target as HTMLInputElement;
-    this.searchQuery = inputElement.value;
-    // Ajoutez ici la logique pour filtrer les résultats en fonction de `searchQuery`
-    console.log('Search query:', this.searchQuery);
+  toggleMobileMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+    console.log('Menu toggled:', this.isMenuOpen);
   }
 }

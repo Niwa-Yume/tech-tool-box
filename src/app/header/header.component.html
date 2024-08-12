@@ -1,42 +1,52 @@
-<div class="w-full p-4 bg-gradient-to-r from-[#BB86FC] to-[#03DAC6]">
-    <div class="flex items-center justify-between flex-wrap">
-        <!-- Left Side: Logo and Dropdown Menu -->
-        <div class="relative group mb-4 sm:mb-0">
-            <div
-                class="w-12 h-12 flex items-center justify-center text-white cursor-pointer">
-                <img src="../../assets/logo/icon.svg" alt="texte alternatif">
-            </div>
-            <div class="hidden group-hover:block absolute top-full left-0 bg-white p-2 rounded-md shadow-md">
-                <span class="text-xl mr-2">AI</span> <br>
-                <span class="text-xl mr-2">Programmation</span> <br>
-                <span class="text-xl mr-2">Devops</span><br>
-                <span class="text-xl">Web Developement</span><br>
-                <span class="text-xl">Data Science</span><br>
-                <span class="text-xl">Logiciel</span><br>
-                <span class="text-xl">Design</span><br>
-                <span class="text-xl">Bureautique(mail,traitement de texte, extension)</span>
-            </div>
+<header class="bg-gradient-to-r from-[#BB86FC] to-[#03DAC6] p-4">
+    <div class="container mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <img src="../../assets/logo/icon.svg" alt="Logo" class="w-10 h-10">
         </div>
 
-        <!-- Center: Navigation Links -->
-        <nav class="space-x-4 mb-4 sm:mb-0 flex flex-wrap justify-center">
-            <a href="#" class="hover:bg-gray-200 px-3 py-2 rounded-md transition duration-300">Accueil</a>
-            <a href="#" class="hover:bg-gray-200 px-3 py-2 rounded-md transition duration-300">Liste des ressources</a>
-            <a href="#" class="hover:bg-gray-200 px-3 py-2 rounded-md transition duration-300">À propos</a>
-            <a href="#" class="hover:bg-gray-200 px-3 py-2 rounded-md transition duration-300">Proposer un outil</a>
+        <!-- Navigation pour desktop -->
+        <nav class="hidden md:flex space-x-6">
+            <a href="#" class="text-white hover:text-gray-200 transition duration-300">Accueil</a>
+            <a href="#" class="text-white hover:text-gray-200 transition duration-300">Liste des ressources</a>
+            <a href="#" class="text-white hover:text-gray-200 transition duration-300">À propos</a>
+            <a href="#" class="text-white hover:text-gray-200 transition duration-300">Proposer un outil</a>
         </nav>
 
-        <!-- Right Side: Search and User Profile -->
-        <div class="flex flex-wrap items-center space-x-4">
-            <!-- Search Bar -->
-            <div class="relative w-full sm:w-auto mb-4 sm:mb-0">
-                <input type="text" placeholder="Rechercher..." (input)="onSearchChange($event)"
-                    class="border border-gray-300 rounded-md px-4 py-2 w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                <div class="absolute top-full right-0 bg-white min-w-[200px] rounded-md shadow-md z-10 hidden">
-                    <!-- Remplacez ceci par votre logique de recherche -->
-                    <div class="p-2 hover:bg-gray-100 cursor-pointer">Résultat de recherche pour "{{ searchQuery }}"</div>
-                </div>
+        <!-- Barre de recherche pour desktop -->
+        <div class="hidden md:block">
+            <input type="text" placeholder="Rechercher..."
+                class="px-4 py-2 rounded-full bg-white bg-opacity-20 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white">
+        </div>
+
+        <!-- Bouton hamburger pour mobile -->
+        <button (click)="toggleMobileMenu()" class="md:hidden text-white focus:outline-none z-50">
+            <svg *ngIf="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Menu mobile -->
+    <div [class.hidden]="!isMenuOpen" class="fixed inset-0 bg-gradient-to-r from-[#BB86FC] to-[#03DAC6] z-40 md:hidden">
+        <div class="flex flex-col h-full justify-center items-center space-y-8 p-6 relative">
+            <!-- Bouton de fermeture -->
+            <button (click)="toggleMobileMenu()" class="absolute top-4 right-4 text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <a href="#" class="text-2xl text-white hover:text-gray-200 transition duration-300">Accueil</a>
+            <a href="#" class="text-2xl text-white hover:text-gray-200 transition duration-300">Liste des ressources</a>
+            <a href="#" class="text-2xl text-white hover:text-gray-200 transition duration-300">À propos</a>
+            <a href="#" class="text-2xl text-white hover:text-gray-200 transition duration-300">Proposer un outil</a>
+            <div class="w-full max-w-md mt-8">
+                <input type="text" placeholder="Rechercher..."
+                    class="w-full px-4 py-2 rounded-full bg-white bg-opacity-20 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white">
             </div>
         </div>
     </div>
-</div>
+</header>
