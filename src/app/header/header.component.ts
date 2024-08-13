@@ -12,7 +12,7 @@ export class HeaderComponent {
   isMenuOpen = false;
 
   toggleMobileMenu(): void {
-    this.isMenuOpen = !this.isMenuOpen;
+    this.isMenuOpen = !this.isMenuOpen; 
     console.log('Menu toggled:', this.isMenuOpen);
   }
 }
