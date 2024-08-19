@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { HeroSectionComponent } from './hero-section/hero-section.component';
+import { HeroSectionComponent } from './composant-home/hero-section/hero-section.component';
 import { HeaderComponent } from './header/header.component';
-import { AboutComponent } from "./about/about.component";
-import { FeaturesComponent } from "./features/features.component";
-import { CtaComponent } from "./cta/cta.component";
+import { AboutComponent } from "./composant-home/about/about.component";
+import { FeaturesComponent } from "./composant-home/features/features.component";
+import { CtaComponent } from "./composant-home/cta/cta.component";
 import { FooterComponent } from "./footer/footer.component";
 import { RouterOutlet } from '@angular/router';
 
