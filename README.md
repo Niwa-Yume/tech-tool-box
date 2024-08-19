@@ -15,11 +15,8 @@ Tech Tool Box est une plateforme innovante destinée à rassembler et à organis
 
 ### Frontend : Angular
 - **Framework** : Angular est utilisé pour développer une interface utilisateur dynamique et réactive.
-### Backend : Supabase
-- **Base de Données** : Supabase est utilisé comme backend pour gérer les opérations CRUD (Create, Read, Update, Delete) sur les ressources et les utilisateurs.
-- **Authentification** : Gestion de l'authentification et de l'autorisation des utilisateurs.
+### Backend : TO-DO [ ]
 
-- **URL du Projet Supabase** : `https://pzzqrgtqfxjlnrpzbawf.supabase.co`
 
 ## Installation
 
@@ -40,13 +37,6 @@ Tech Tool Box est une plateforme innovante destinée à rassembler et à organis
     ng serve
     ```
 
-4. **Configurez les variables d'environnement pour Supabase** :
-    - Créez un fichier `.env` dans le dossier racine du projet.
-    - Ajoutez les informations de votre projet Supabase :
-      ```env
-      SUPABASE_URL=https://pzzqrgtqfxjlnrpzbawf.supabase.co
-      SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB6enFyZ3RxZnhqbG5ycHpiYXdmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjMwNDM0MDMsImV4cCI6MjAzODYxOTQwM30.U5sfg0WhMM-DfsPL6kY0bgNwTP_Od_fDdlPfwk2SPTY
-      ```
 
 ## Utilisation
 
