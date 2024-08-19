@@ -8,10 +8,10 @@ import { CommonModule } from '@angular/common';
   template: `
     <section class="grid items-center justify-center grid-cols-1 px-4 py-24 text-center lg:grid-cols-3">
       <div class="col-auto lg:col-start-2">
-        <p class="mb-2 font-bold text-primary text-sm md:text-xl">
+        <h1 class="mb-2 text-indigo-600 font-bold text-primary text-3xl md:text-4xl lg:text-5xl">
           Tech Tool Box 
-        </p>
-        <p class="pb-10 md:leading-tight md:mb-6 text-sm md:text-xl">
+        </h1>
+        <p class="pb-10 text-white md:leading-tight md:mb-6 text-sm md:text-xl">
           offrant une agrégation d'IA, de sites web et de logiciels essentiels
         </p>
         <button #ctaButton class="relative w-64 h-16 bg-indigo-600 text-white text-lg font-bold rounded-full overflow-hidden">
