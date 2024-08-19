@@ -1,3 +1,4 @@
+<!-- Header container -->
 <header class="bg-gradient-to-r from-[#BB86FC] to-[#03DAC6] p-4">
     <div class="container mx-auto flex items-center justify-between">
         <!-- Logo -->
@@ -5,68 +6,61 @@
             <img src="../../assets/logo/icon.svg" alt="Logo" class="w-10 h-10">
         </div>
 
-        <!-- Navigation pour desktop -->
-        <nav class="hidden md:flex space-x-6">
-            <a href="#" class="text-white hover:text-blue-300 transition duration-300 ease-in-out relative group">
-                <span class="relative">
-                    Accueil
-                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-300 transform scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
-                </span>
+        <!-- Navigation links for desktop -->
+        <nav class="hidden md:flex space-x-4">
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                class="text-white hover:text-blue-300 transition duration-300 ease-in-out relative group">
+                Accueil
+                <span
+                    class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-300 transform scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
             </a>
-            <a href="#" class="text-white hover:text-blue-300 transition duration-300 ease-in-out relative group">
-                <span class="relative">
-                    Liste des ressources
-                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-300 transform scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
-                </span>
+            <a routerLink="/resources" routerLinkActive="active"
+                class="text-white hover:text-blue-300 transition duration-300 ease-in-out relative group">
+                Liste des ressources
+                <span
+                    class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-300 transform scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
             </a>
-            <a href="#" class="text-white hover:text-blue-300 transition duration-300 ease-in-out relative group">
-                <span class="relative">
-                    À propos
-                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-300 transform scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
-                </span>
+            <a routerLink="/page-about" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                class="text-white hover:text-blue-300 transition duration-300 ease-in-out relative group">
+                À propos
+                <span
+                    class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-300 transform scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
             </a>
-            <a href="#" class="text-white hover:text-blue-300 transition duration-300 ease-in-out relative group">
-                <span class="relative">
-                    Proposer un outil
-                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-300 transform scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
-                </span>
+            <a routerLink="/propose" routerLinkActive="active"
+                class="text-white hover:text-blue-300 transition duration-300 ease-in-out relative group">
+                Proposer un outil
+                <span
+                    class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-300 transform scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
             </a>
         </nav>
 
-        <!-- Barre de recherche pour desktop -->
-        <div class="hidden md:block">
-            <input type="text" placeholder="Rechercher..."
-                class="px-4 py-2 rounded-full bg-white bg-opacity-20 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white">
-        </div>
-
-        <!-- Bouton hamburger pour mobile -->
-        <button (click)="toggleMobileMenu()" class="md:hidden text-white focus:outline-none z-50">
-            <svg *ngIf="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+        <!-- Mobile menu button -->
+        <button (click)="toggleMobileMenu()" class="md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
         </button>
     </div>
-
-    <!-- Menu mobile -->
-    <div [class.hidden]="!isMenuOpen" class="fixed inset-0 bg-gradient-to-r from-[#BB86FC] to-[#03DAC6] z-40 md:hidden">
-        <div class="flex flex-col h-full justify-center items-center space-y-8 p-6 relative">
-            <!-- Bouton de fermeture -->
-            <button (click)="toggleMobileMenu()" class="absolute top-4 right-4 text-white focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-
-            <a href="#" class="text-2xl text-white hover:text-gray-200 transition duration-300">Accueil</a>
-            <a href="#" class="text-2xl text-white hover:text-gray-200 transition duration-300">Liste des ressources</a>
-            <a href="#" class="text-2xl text-white hover:text-gray-200 transition duration-300">À propos</a>
-            <a href="#" class="text-2xl text-white hover:text-gray-200 transition duration-300">Proposer un outil</a>
-            <div class="w-full max-w-md mt-8">
-                <input type="text" placeholder="Rechercher..."
-                    class="w-full px-4 py-2 rounded-full bg-white bg-opacity-20 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white">
-            </div>
-        </div>
-    </div>
 </header>
+
+<!-- Mobile menu (hidden by default) -->
+<div [ngClass]="{'hidden': !isMenuOpen}"
+    class="fixed inset-0 bg-gradient-to-r from-[#BB86FC] to-[#03DAC6] z-40 md:hidden">
+    <div class="flex flex-col h-full justify-center items-center space-y-8 p-6 relative">
+        <button (click)="toggleMobileMenu()" class="absolute top-4 right-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <a routerLink="/" (click)="toggleMobileMenu()"
+            class="text-2xl text-white hover:text-gray-200 transition duration-300">Accueil</a>
+        <a routerLink="/resources" (click)="toggleMobileMenu()"
+            class="text-2xl text-white hover:text-gray-200 transition duration-300">Liste des ressources</a>
+        <a routerLink="/about" (click)="toggleMobileMenu()"
+            class="text-2xl text-white hover:text-gray-200 transition duration-300">À propos</a>
+        <a routerLink="/propose" (click)="toggleMobileMenu()"
+            class="text-2xl text-white hover:text-gray-200 transition duration-300">Proposer un outil</a>
+    </div>
+</div>
