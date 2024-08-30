@@ -6,8 +6,12 @@ import { ComposantDetailComponent } from './page-liste/composant-detail/composan
 
 export const routes: Routes = [
     { path: 'page-about', component: PageAboutComponent }, 
-    { path: '', component: HomeComponent },
-    { path: '**', redirectTo: '' },
     { path: 'page-liste', component: PageListeComponent},
     { path: 'page-liste/:id', component: ComposantDetailComponent},
+
+    
+    //Doit toujours ce trouver en dernier pour pas prendre en compte les autres routes
+    { path: '', component: HomeComponent },
+    { path: '**', redirectTo: '' },
+
 ];
