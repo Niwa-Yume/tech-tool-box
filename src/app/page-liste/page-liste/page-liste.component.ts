@@ -79,7 +79,19 @@ export class PageListeComponent implements OnInit {
   });
 
   // Computed property pour tous les tags uniques
- 
+  outils = signal<Outil[]>([
+    { nom: 'GPT-3', description: 'Modèle de langage d\'OpenAI', tags: ['payant', 'api'], lien: 'https://openai.com/gpt-3' },
+    { nom: 'TensorFlow', description: 'Framework open-source pour le machine learning', tags: ['gratuit', 'open-source'], lien: 'https://www.tensorflow.org/' }
+    // Ajoutez d'autres outils ici...
+  ]);
+
+  outilsFiltres = computed(() => {
+    return this.outils().filter(outil =>
+      this.termeRecherche() === '' || 
+      outil.nom.toLowerCase().includes(this.termeRecherche().toLowerCase()) ||
+      outil.description.toLowerCase().includes(this.termeRecherche().toLowerCase())
+    );
+  });
 
   constructor() {
     // Utilisation d'effect pour les effets secondaires
@@ -94,8 +106,4 @@ export class PageListeComponent implements OnInit {
     // mais peut être utilisé pour des initialisations supplémentaires si nécessaire
   }
 
-  // Méthode pour ouvrir un lien
-  ouvrirLien(url: string): void {
-    window.open(url, '_blank');
-  }
 }
