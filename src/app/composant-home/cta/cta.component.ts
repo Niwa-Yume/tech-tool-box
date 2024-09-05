@@ -1,10 +1,11 @@
 import { Component, ViewChild, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router'; // Ajoutez cette ligne
 
 @Component({
   selector: 'app-cta',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule], // Ajoutez RouterModule ici
   template: `
     <section class="grid items-center justify-center grid-cols-1 px-4 py-24 text-center lg:grid-cols-3">
       <div class="col-auto lg:col-start-2">
@@ -14,7 +15,7 @@ import { CommonModule } from '@angular/common';
         <p class="pb-10 text-white md:leading-tight md:mb-6 text-sm md:text-xl">
           offrant une agrégation d'IA, de sites web et de logiciels essentiels
         </p>
-        <button #ctaButton class="relative w-64 h-16 bg-indigo-600 text-white text-lg font-bold rounded-full overflow-hidden">
+        <button #ctaButton routerLink="/page-liste" routerLinkActive="active" class="relative w-64 h-16 bg-indigo-600 text-white text-lg font-bold rounded-full overflow-hidden">
           <span class="relative z-10">Lancez-vous dès maintenant</span>
           <div class="ripple-container absolute inset-0"></div>
         </button>

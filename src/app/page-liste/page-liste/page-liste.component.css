@@ -1,0 +1,144 @@
+/* page-liste.component.css */
+
+/* ... autres styles existants ... */
+
+/* Styles pour la barre de recherche et le sélecteur de tags */
+:host ::ng-deep .p-inputtext {
+    width: 100%;
+    height: 48px;
+    /* Hauteur fixe pour la barre de recherche */
+}
+
+:host ::ng-deep .p-multiselect {
+    width: 100%;
+    height: 48px;
+    /* Hauteur fixe pour le multiselect */
+}
+
+:host ::ng-deep .p-multiselect .p-multiselect-label {
+    padding: 0.75rem 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Assurer que l'icône de recherche est bien positionnée */
+:host ::ng-deep .p-input-icon-left>i {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Styles responsives */
+@media (max-width: 768px) {
+
+    :host ::ng-deep .p-inputtext,
+    :host ::ng-deep .p-multiselect {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Styles pour le TabView transparent */
+:host ::ng-deep .transparent-tabview .p-tabview-panels,
+:host ::ng-deep .transparent-tabview .p-tabview-panel {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* ... autres styles existants ... */
+
+/* Fixer la taille de la barre de recherche et du sélecteur de tags */
+:host ::ng-deep .p-inputtext {
+    width: 100%;
+    height: 48px;
+    /* Hauteur fixe pour la barre de recherche */
+}
+
+:host ::ng-deep .p-multiselect {
+    width: 100%;
+    height: 48px;
+    /* Hauteur fixe pour le sélecteur */
+}
+
+:host ::ng-deep .p-multiselect .p-multiselect-label {
+    padding: 0.75rem 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* S'assurer que les composants TabView et Table sont transparents */
+:host ::ng-deep .transparent-tabview .p-tabview-panels,
+:host ::ng-deep .transparent-tabview .p-tabview-panel {
+    background: transparent !important;
+    border: none !important;
+}
+
+:host ::ng-deep .transparent-tabview .p-tabview-nav {
+    background: transparent !important;
+    border-bottom: none !important;
+}
+
+/* Assurer la transparence de la table si vous en avez une */
+:host ::ng-deep .p-table {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Maintenir les cartes des outils avec un fond blanc */
+:host ::ng-deep .outil-card {
+    background-color: white !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for cards */
+:host ::ng-deep .outil-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles responsives */
+@media (max-width: 768px) {
+
+    :host ::ng-deep .p-inputtext,
+    :host ::ng-deep .p-multiselect {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Fixer la hauteur maximale pour les cartes d'outils */
+:host ::ng-deep .outil-card {
+    background-color: white !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 350px;
+    /* Fixer une hauteur constante pour toutes les cartes */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Assure que le bouton est toujours en bas */
+    overflow: hidden;
+    /* S'assurer que le contenu ne dépasse pas */
+}
+
+/* Limiter la hauteur de la description et masquer l'excès de texte */
+:host ::ng-deep .outil-card p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* Limiter à 3 lignes */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Gérer les tags et le bouton pour qu'ils soient toujours alignés */
+:host ::ng-deep .outil-card .flex-wrap {
+    margin-top: auto;
+    /* S'assurer que le bouton reste en bas */
+}
+
+/* Ajout d'un effet hover sur les cartes */
+:host ::ng-deep .outil-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
