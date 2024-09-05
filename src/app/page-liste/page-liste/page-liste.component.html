@@ -21,7 +21,7 @@
         <!-- Affichage des outils -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Carte pour chaque outil -->
-            <div class="outil-card bg-white" *ngFor="let outil of outilsFiltres()"
+            <div class="outil-card bg-white" (onClick)="navigateTo(outil.lien)" *ngFor="let outil of outilsFiltres()"
                 class="rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-indigo-800 mb-2">{{ outil.nom }}</h3>

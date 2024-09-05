@@ -11,6 +11,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { RippleModule } from 'primeng/ripple';
 import { TooltipModule } from 'primeng/tooltip';
 import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 // Définition des interfaces pour la structure des données qui sert à l'affichage et à la logique
 interface Outil {
@@ -105,7 +106,7 @@ export class PageListeComponent implements OnInit {
     );
   });
   //le constructeur est utilisé pour initialiser les données et les effets secondaires
-  constructor() {
+  constructor(private router: Router) {
     // Utilisation d'effect pour les effets secondaires comme le logging pour le terme de recherche et les tags sélectionnés
     effect(() => {
       console.log('Terme de recherche mis à jour:', this.termeRecherche());
@@ -118,4 +119,7 @@ export class PageListeComponent implements OnInit {
     // mais peut être utilisé pour des initialisations supplémentaires si nécessaire
   }
 
+  navigateTo(lien: string): void {
+    this.router.navigate([lien]);
+  }
 }
