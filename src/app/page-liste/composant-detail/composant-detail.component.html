@@ -18,14 +18,10 @@
     <div class="md:col-span-2">
       <p-tabView>
         <p-tabPanel header="Description">
-          <p-panel [toggleable]="true" [collapsed]="false">
-            <ng-template pTemplate="header">
-              Description de l'outil
-            </ng-template>
-            <ng-template pTemplate="content">
-              <p class="text-gray-700">{{ outil.description }}</p>
-            </ng-template>
-          </p-panel>
+          <div>
+            <h3>Description de l'outil</h3>
+            <p class="text-gray-700">{{ outil.description }}</p>
+          </div>
         </p-tabPanel>
 
         <p-tabPanel header="Fonctionnalités" *ngIf="outil.fonctionnalitesPrincipales?.length">
