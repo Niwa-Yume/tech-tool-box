@@ -90,11 +90,16 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 /* Hover effect for cards */
 :host ::ng-deep .outil-card:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }
 
 /* Styles responsives */
@@ -141,4 +146,13 @@
 /* Ajout d'un effet hover sur les cartes */
 :host ::ng-deep .outil-card:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles pour l'image dans les cartes */
+:host ::ng-deep .outil-card img {
+    transition: transform 0.3s ease;
+}
+
+:host ::ng-deep .outil-card:hover img {
+    transform: scale(1.05);
 }
