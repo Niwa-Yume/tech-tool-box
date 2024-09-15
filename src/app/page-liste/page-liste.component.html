@@ -1,4 +1,16 @@
-<section>
-  <h1>Liste des outils qui sont disponibles :</h1>
-  <input type="text" pInputText [(ngModel)]="value" />
+<section class="page-liste"> <!-- Ajout d'une classe pour le style général -->
+  <h1 class="title custom-title">Liste des outils disponibles :</h1> <!-- Classe pour le style du titre -->
+  <div class="search-bar p-inputgroup custom-search-bar"> <!-- Classe pour le style de la barre de recherche -->
+    <input type="text" pInputText [(ngModel)]="value" placeholder="Rechercher un outil..." class="search-input" />
+    <button pButton type="button" class="search-button">
+      <i class="pi-search" style="color: black;"></i> <!-- Changement de couleur en noir -->
+    </button>
+  </div>
+  
+  <div *ngFor="let tool of tools" class="p-card tool-card"> <!-- Classe pour le style des cartes d'outils -->
+    <h2 class="tool-name">{{ tool.name }}</h2> <!-- Classe pour le style du nom de l'outil -->
+    <img [src]="tool.image" alt="{{ tool.name }}" class="p-card-image" />
+    <p class="tool-description">{{ tool.description }}</p> <!-- Classe pour le style de la description -->
+    <a [href]="tool.lien" pButton label="Voir plus" class="p-button-text"></a> <!-- Bouton pour voir plus -->
+  </div>
 </section>

@@ -1,0 +1,29 @@
+.custom-title {
+    color: white; /* Couleur de police blanche */
+    font-size: 2rem; /* Taille de police */
+    text-align: center; /* Centrer le titre */
+    margin-bottom: 20px; /* Espacement en bas */
+}
+
+.custom-search-bar {
+    display: flex; /* Flexbox pour aligner les éléments */
+    justify-content: center; /* Centrer la barre de recherche */
+    margin-bottom: 20px; /* Espacement en bas */
+}
+
+.search-input {
+    border: 1px solid #3498db; /* Bordure personnalisée */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px; /* Espacement interne */
+    width: 300px; /* Largeur de la barre de recherche */
+    background-color: #f0f0f0; /* Couleur de fond */
+}
+
+.search-button {
+    background-color: #3498db; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte du bouton */
+    border: none; /* Supprimer la bordure */
+    border-radius: 5px; /* Coins arrondis */
+    margin-left: 5px; /* Espacement à gauche */
+    padding: 10px 15px; /* Espacement interne */
+}

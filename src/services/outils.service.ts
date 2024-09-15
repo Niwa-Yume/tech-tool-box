@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
-import { Observable, from } from 'rxjs';
+import { Observable, from, map, throwError, catchError } from 'rxjs';
 import { environment } from '../environnement/environnement';
 
-interface Tool {
+// Ajoutez le mot-clé export ici
+export interface Tool {
   name: string;
   image: string;
   description: string;
@@ -27,6 +28,17 @@ export class ToolsService {
       .from('tools')
       .select('*')
       .order('name')
+    ).pipe(
+      map((response: any) => {
+        if (response.error) {
+          throw new Error(response.error.message); // Gérer l'erreur ici
+        }
+        return response.data as Tool[];
+      }),
+      catchError(error => {
+        console.error('Error fetching tools:', error);
+        return throwError(() => new Error('Failed to fetch tools'));
+      })
     );
   }
 
