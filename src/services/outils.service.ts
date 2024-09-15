@@ -9,7 +9,7 @@ export interface Tool {
   image: string;
   description: string;
   lien: string;
-  Catégorie: string;
+  categorie: string; // Changement ici
 }
 
 @Injectable({
@@ -18,7 +18,6 @@ export interface Tool {
 export class ToolsService {
   private supabase: SupabaseClient;
 
-  //Initialisation de la connexion à la base de données
   constructor() {
     this.supabase = createClient(environment.supabaseUrl, environment.supabaseKey);
   }
@@ -31,13 +30,14 @@ export class ToolsService {
     ).pipe(
       map((response: any) => {
         if (response.error) {
-          throw new Error(response.error.message); // Gérer l'erreur ici
+          console.error('Supabase error:', response.error);
+          throw new Error(response.error.message);
         }
         return response.data as Tool[];
       }),
       catchError(error => {
         console.error('Error fetching tools:', error);
-        return throwError(() => new Error('Failed to fetch tools'));
+        return throwError(() => new Error('Failed to fetch tools: ' + error.message));
       })
     );
   }

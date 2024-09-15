@@ -27,3 +27,52 @@
     margin-left: 5px; /* Espacement à gauche */
     padding: 10px 15px; /* Espacement interne */
 }
+
+.tool-card {
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    transition: transform 0.2s; /* Animation de transformation */
+}
+
+.tool-card:hover {
+    transform: scale(1.05); /* Agrandissement au survol */
+}
+
+.p-card-image {
+    border-top-left-radius: 10px; /* Coins arrondis pour l'image */
+    border-top-right-radius: 10px; /* Coins arrondis pour l'image */
+    width: 100%; /* Largeur de l'image */
+    height: 200px; /* Hauteur fixe pour limiter la taille de l'image */
+    object-fit: cover; /* Couvrir l'espace sans déformer l'image */
+}
+
+.tool-name {
+    font-weight: bold; /* Texte en gras */
+    font-size: 1.5rem; /* Taille de police */
+    margin: 10px 0; /* Espacement */
+}
+
+.tool-description {
+    color: #666; /* Couleur de texte gris */
+    font-size: 1rem; /* Taille de police */
+    margin-bottom: 10px; /* Espacement en bas */
+}
+
+.container {
+    max-width: 1200px; /* Largeur maximale du conteneur */
+    margin: 0 auto; /* Centrer le conteneur */
+    padding: 20px; /* Espacement interne */
+}
+
+.grid-container {
+    display: grid; /* Utilisation de la grille CSS */
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes de largeur égale */
+    gap: 20px; /* Espacement entre les cartes */
+    margin-top: 20px; /* Espacement en haut */
+}
+
+.search-bar {
+    display: flex; /* Flexbox pour aligner les éléments */
+    justify-content: center; /* Centrer la barre de recherche */
+    margin-bottom: 20px; /* Espacement en bas */
+}
