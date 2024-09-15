@@ -20,12 +20,24 @@
 }
 
 .search-button {
-    background-color: #3498db; /* Couleur de fond du bouton */
-    color: white; /* Couleur du texte du bouton */
-    border: none; /* Supprimer la bordure */
+    background-color: transparent; /* Fond transparent */
+    border: 2px solid #3498db; /* Bordure personnalisée */
+    color: #3498db; /* Couleur du texte */
     border-radius: 5px; /* Coins arrondis */
     margin-left: 5px; /* Espacement à gauche */
-    padding: 10px 15px; /* Espacement interne */
+    padding: 10px; /* Espacement interne */
+    cursor: pointer; /* Curseur pointer */
+    transition: background-color 0.3s, color 0.3s; /* Transition pour l'effet au survol */
+}
+
+.search-button:hover {
+    background-color: #3498db; /* Couleur de fond au survol */
+    color: white; /* Couleur du texte au survol */
+}
+
+.search-button img {
+    width: 20px; /* Largeur de l'image */
+    height: 20px; /* Hauteur de l'image */
 }
 
 .tool-card {
@@ -75,4 +87,24 @@
     display: flex; /* Flexbox pour aligner les éléments */
     justify-content: center; /* Centrer la barre de recherche */
     margin-bottom: 20px; /* Espacement en bas */
+}
+
+.category-filter {
+    display: flex; /* Flexbox pour aligner les boutons de catégorie */
+    justify-content: center; /* Centrer les boutons */
+    margin-bottom: 20px; /* Espacement en bas */
+}
+
+.category-button {
+    margin: 0 10px; /* Espacement entre les boutons */
+    padding: 10px 15px; /* Espacement interne */
+    background-color: #3498db; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Supprimer la bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointer */
+}
+
+.category-button:hover {
+    background-color: #2980b9; /* Couleur au survol */
 }

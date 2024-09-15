@@ -18,8 +18,10 @@ import { CardModule } from 'primeng/card';
   styleUrls: ['./page-liste.component.css'] // Corrigez styleUrl en styleUrls
 })
 export class PageListeComponent implements OnInit { // Implémentez OnInit
-  value: any;
+  value: string = ''; // Initialisez la valeur comme une chaîne vide
   tools: Tool[] = []; // Corrigez le type ici
+  filteredTools: Tool[] = []; // Ajout d'un tableau pour les outils filtrés
+  categories: string[] = []; // Ajout d'un tableau pour les catégories
 
   constructor(private toolsService: ToolsService) {} // Injectez ToolsService
 
@@ -28,11 +30,24 @@ export class PageListeComponent implements OnInit { // Implémentez OnInit
       next: (data: Tool[]) => {
         console.log('Tools loaded:', data);
         this.tools = data;
+        this.filteredTools = data; // Initialiser les outils filtrés
+        this.categories = [...new Set(data.map(tool => tool.categorie))]; // Extraire les catégories uniques
       },
       error: (error) => {
         console.error('Error loading tools:', error);
-        // Gérer l'erreur (par exemple, afficher un message à l'utilisateur)
       }
     });  
+  }
+
+  filterByCategory(category: string) { // Méthode pour filtrer par catégorie
+    this.filteredTools = category ? this.tools.filter(tool => tool.categorie === category) : this.tools;
+    this.searchTools(); // Appeler la fonction de recherche après le filtrage par catégorie
+  }
+
+  searchTools() { // Méthode pour rechercher des outils
+    this.filteredTools = this.tools.filter(tool => 
+      tool.name.toLowerCase().includes(this.value.toLowerCase()) || 
+      tool.description.toLowerCase().includes(this.value.toLowerCase())
+    );
   }
 }
