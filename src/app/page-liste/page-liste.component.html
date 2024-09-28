@@ -1,36 +1,31 @@
-<section class="page-liste"> <!-- Ajout d'une classe pour le style général -->
-  <h1 class="title custom-title">Liste des outils disponibles :</h1> <!-- Classe pour le style du titre -->
-  <div class="container"> <!-- Conteneur pour la barre de recherche et les cartes -->
-    <div class="search-bar p-inputgroup custom-search-bar"> <!-- Classe pour le style de la barre de recherche -->
-      <input type="text" pInputText [(ngModel)]="value" (input)="searchTools()" placeholder="Rechercher un outil..." class="search-input" />
-      <button pButton type="button" class="search-button">
-        <i class="fas fa-search"></i> <!-- Icône de loupe -->
-      </button>
+<div class="section page-liste">
+  <h1 class="title custom-title">Liste des outils disponibles :</h1>
+  <div class="container">
+    <div class="search-bar p-inputgroup custom-search-bar">
+      <input type="text" pInputText [(ngModel)]="searchTerm" (input)="searchTools()" placeholder="Rechercher un outil..." class="search-input">
     </div>
-    
-    <div class="category-filter"> <!-- Ajout d'un conteneur pour les filtres de catégorie -->
-      <button *ngFor="let category of categories" (click)="filterByCategory(category)" class="category-button">
-        {{ category }}
-      </button>
-      <!-- Suppression du bouton "Tous" -->
-    </div>
-    
-    <div class="grid-container"> <!-- Utilisation de filteredTools pour afficher les outils -->
-      <div *ngFor="let tool of filteredTools">
-        <p-card [header]="tool.name" [subheader]="tool.categorie" [style]="{ width: '100%' }" class="tool-card"> <!-- Utilisation de p-card pour chaque outil -->
-          <ng-template pTemplate="header">
-            <img [src]="tool.image" alt="{{ tool.name }}" class="p-card-image" /> <!-- Affichage de l'image depuis la BDD -->
-          </ng-template>
-          <p class="tool-description">{{ tool.description }}</p> <!-- Affichage de la description -->
-          <ng-template pTemplate="footer">
-            <div class="flex gap-3 mt-1">
-              <a [href]="tool.lien" pButton label="Voir plus" class="w-full" styleClass="w-full"></a> <!-- Bouton pour voir plus -->
-            </div>
-          </ng-template>
-        </p-card>
+    <div class="filter-container">
+      <h2 class="filter-title">Filtres :</h2>
+      <div class="filter-buttons">
+        <button (click)="filterTools('Tous')"
+                class="px-4 py-2 rounded-full bg-blue-500 hover:bg-blue-700 transition-colors duration-300 flex items-center gap-2 text-white font-semibold shadow-lg">
+          Tous
+        </button>
+        <button *ngFor="let category of filterList"
+                (click)="filterTools(category)"
+                class="px-4 py-2 rounded-full bg-blue-500 hover:bg-blue-700 transition-colors duration-300 flex items-center gap-2 text-white font-semibold shadow-lg">
+          {{ category }}
+        </button>
       </div>
     </div>
+    <div class="grid-container">
+      <div *ngFor="let tool of filteredTools" class="tool-card">
+        <img [src]="tool.image"
+             [alt]="tool.name"  
+             class="w-full h-48 object-cover mb-4">
+        <h3>{{ tool.name }}</h3>
+        <p>{{ tool.description }}</p>
+        <a [href]="tool.lien" pButton label="Voir plus" class="w-full mt-4"></a>
+      </div>
   </div>
-</section>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</div>

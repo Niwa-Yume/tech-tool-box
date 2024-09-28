@@ -1,53 +1,66 @@
-import { Component, OnInit } from '@angular/core'; // Ajoutez OnInit
+import { Component, OnInit } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
-import { FormsModule } from '@angular/forms'; // Ajoutez cette ligne
-import { ToolsService } from '../../services/outils.service'; // Corrigez le chemin
-import { Tool } from '../../services/outils.service'; // Ajoutez cette ligne pour importer l'interface Tool
-import { CommonModule } from '@angular/common'; // Ajoutez cette ligne
-import { IconFieldModule } from 'primeng/iconfield';
-import { InputIconModule } from 'primeng/inputicon';
+import { FormsModule } from '@angular/forms';
+import { ToolsService, Tool } from '../../services/outils.service';
+import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-page-liste',
   standalone: true,
-  imports: [InputTextModule, FormsModule, CommonModule, InputIconModule,IconFieldModule,ButtonModule, CardModule], // Ajoutez FormsModule ici
-  providers: [ToolsService],
+  imports: [InputTextModule, FormsModule, CommonModule, ButtonModule, CardModule],
   templateUrl: './page-liste.component.html',
-  styleUrls: ['./page-liste.component.css'] // Corrigez styleUrl en styleUrls
+  styleUrls: ['./page-liste.component.css']
 })
-export class PageListeComponent implements OnInit { // Implémentez OnInit
-  value: string = ''; // Initialisez la valeur comme une chaîne vide
-  tools: Tool[] = []; // Corrigez le type ici
-  filteredTools: Tool[] = []; // Ajout d'un tableau pour les outils filtrés
-  categories: string[] = []; // Ajout d'un tableau pour les catégories
+export class PageListeComponent implements OnInit {
+  searchTerm: string = '';
+  tools: Tool[] = [];
+  filteredTools: Tool[] = [];
+  filterList: string[] = ['AI', 'Github', 'Analytics'];
 
-  constructor(private toolsService: ToolsService) {} // Injectez ToolsService
+  constructor(private toolsService: ToolsService) {}
 
   ngOnInit() {
     this.toolsService.getTools().subscribe({
       next: (data: Tool[]) => {
-        console.log('Tools loaded:', data);
         this.tools = data;
-        this.filteredTools = data; // Initialiser les outils filtrés
-        this.categories = [...new Set(data.map(tool => tool.categorie))]; // Extraire les catégories uniques
+        this.filteredTools = [...this.tools];
+        console.log('Tools retrieved:', this.tools);
+        console.log('Initial filteredTools:', this.filteredTools);
+        console.log('Unique tool categories:', [...new Set(this.tools.map(tool => tool.Categorie))]);
       },
       error: (error) => {
         console.error('Error loading tools:', error);
       }
-    });  
+    });
   }
 
-  filterByCategory(category: string) { // Méthode pour filtrer par catégorie
-    this.filteredTools = category ? this.tools.filter(tool => tool.categorie === category) : this.tools;
-    this.searchTools(); // Appeler la fonction de recherche après le filtrage par catégorie
+  filterTools(category: string) {
+    console.log('Filtering by category:', category);
+    
+    if (category.toLowerCase() === 'tous') {
+      this.filteredTools = [...this.tools];
+    } else {
+      this.filteredTools = this.tools.filter(tool => {
+        const toolCategory = (tool.Categorie || '').toLowerCase();
+        const filterCategory = category.toLowerCase();
+        const result = toolCategory === filterCategory;
+        console.log(`Tool ${tool.name}, category: ${toolCategory}, matches ${filterCategory}: ${result}`);
+        return result;
+      });
+    }
+    
+    console.log('Filtered tools:', this.filteredTools);
   }
 
-  searchTools() { // Méthode pour rechercher des outils
-    this.filteredTools = this.tools.filter(tool => 
-      tool.name.toLowerCase().includes(this.value.toLowerCase()) || 
-      tool.description.toLowerCase().includes(this.value.toLowerCase())
+  searchTools() {
+    const searchTerm = this.searchTerm.toLowerCase();
+    this.filteredTools = this.tools.filter(tool =>
+      tool.name.toLowerCase().includes(searchTerm) ||
+      tool.description.toLowerCase().includes(searchTerm) ||
+      ((tool.Categorie || '').toLowerCase().includes(searchTerm))
     );
+    console.log('Search results:', this.filteredTools);
   }
 }

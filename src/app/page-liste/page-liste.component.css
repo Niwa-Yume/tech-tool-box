@@ -13,26 +13,37 @@
 
 .search-input {
     border: 1px solid #3498db; /* Bordure personnalisée */
-    border-radius: 5px; /* Coins arrondis */
-    padding: 10px; /* Espacement interne */
+    border-radius: 25px; /* Coins arrondis */
+    padding: 10px 20px; /* Espacement interne */
     width: 300px; /* Largeur de la barre de recherche */
     background-color: #f0f0f0; /* Couleur de fond */
+    transition: border-color 0.3s; /* Transition pour la bordure */
+}
+
+.search-input:focus {
+    border-color: #2980b9; /* Couleur de bordure au focus */
+    outline: none; /* Supprimer le contour par défaut */
 }
 
 .search-button {
-    background-color: transparent; /* Fond transparent */
-    border: 2px solid #3498db; /* Bordure personnalisée */
-    color: #3498db; /* Couleur du texte */
-    border-radius: 5px; /* Coins arrondis */
-    margin-left: 5px; /* Espacement à gauche */
+    background-color: #3498db; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Supprimer la bordure */
+    border-radius: 50%; /* Coins arrondis pour un look moderne */
     padding: 10px; /* Espacement interne */
     cursor: pointer; /* Curseur pointer */
-    transition: background-color 0.3s, color 0.3s; /* Transition pour l'effet au survol */
+    transition: background-color 0.3s, transform 0.2s; /* Transition pour l'effet au survol */
+    margin-left: 10px; /* Espacement à gauche */
+    width: 45px; /* Largeur fixe */
+    height: 45px; /* Hauteur fixe */
+    display: flex; /* Centrer l'icône */
+    align-items: center; /* Centrer verticalement */
+    justify-content: center; /* Centrer horizontalement */
 }
 
 .search-button:hover {
-    background-color: #3498db; /* Couleur de fond au survol */
-    color: white; /* Couleur du texte au survol */
+    background-color: #2980b9; /* Couleur au survol */
+    transform: scale(1.1); /* Légère augmentation au survol */
 }
 
 .search-button img {
@@ -40,10 +51,16 @@
     height: 20px; /* Hauteur de l'image */
 }
 
+.search-button i {
+    font-size: 20px; /* Ajustez la taille de l'icône si nécessaire */
+    line-height: 1; /* Assurez-vous que l'icône est bien centrée */
+}
+
 .tool-card {
     border-radius: 10px; /* Coins arrondis */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
     transition: transform 0.2s; /* Animation de transformation */
+    overflow: hidden; /* Masquer le débordement */
 }
 
 .tool-card:hover {
@@ -78,7 +95,7 @@
 
 .grid-container {
     display: grid; /* Utilisation de la grille CSS */
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes de largeur égale */
+    grid-template-columns: repeat(3, 1fr); /* Trois colonnes de largeur égale */
     gap: 20px; /* Espacement entre les cartes */
     margin-top: 20px; /* Espacement en haut */
 }
@@ -107,4 +124,47 @@
 
 .category-button:hover {
     background-color: #2980b9; /* Couleur au survol */
+}
+
+.filter-container {
+    display: flex; /* Flexbox pour aligner les filtres */
+    justify-content: center; /* Centrer les filtres */
+    margin-bottom: 20px; /* Espacement en bas */
+    flex-wrap: wrap; /* Permettre le retour à la ligne si nécessaire */
+    gap: 10px; /* Espacement entre les boutons */
+}
+
+.filter-buttons {
+    display: flex; /* Flexbox pour aligner les boutons */
+    justify-content: center; /* Centrer les boutons */
+    flex-wrap: wrap; /* Permettre le retour à la ligne si nécessaire */
+}
+
+.filter-button {
+    margin: 0 10px; /* Espacement entre les boutons de filtre */
+    padding: 10px 20px; /* Espacement interne */
+    background-color: #3498db; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Supprimer la bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointer */
+    transition: background-color 0.3s, transform 0.2s; /* Transition pour l'effet au survol */
+    font-weight: bold; /* Texte en gras pour le bouton */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre légère pour le bouton */
+}
+
+.filter-button:hover {
+    background-color: #2980b9; /* Couleur au survol */
+    transform: scale(1.05); /* Légère augmentation au survol */
+}
+
+.filter-button.active {
+    background-color: #2980b9; /* Couleur au survol */
+}
+
+.filter-title {
+    color: white; /* Couleur blanche pour le titre des filtres */
+    font-size: 1.5rem; /* Taille de police */
+    margin-bottom: 10px; /* Espacement en bas */
+    text-align: center; /* Centrer le texte */
 }
