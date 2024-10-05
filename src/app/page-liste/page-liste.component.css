@@ -85,6 +85,9 @@
     color: #666; /* Couleur de texte gris */
     font-size: 1rem; /* Taille de police */
     margin-bottom: 10px; /* Espacement en bas */
+    white-space: nowrap; /* Empêche le retour à la ligne */
+    overflow: hidden; /* Masque le texte qui déborde */
+    text-overflow: ellipsis; /* Affiche des points de suspension (...) pour le texte débordant */
 }
 
 .container {
