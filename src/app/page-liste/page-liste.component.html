@@ -3,29 +3,31 @@
   <div class="container">
     <div class="search-bar p-inputgroup custom-search-bar">
       <input type="text" pInputText [(ngModel)]="searchTerm" (input)="searchTools()" placeholder="Rechercher un outil..." class="search-input">
+      <button class="search-button">
+        <i class="fas fa-search-plus"></i> <!-- Nouvelle icône de recherche -->
+      </button>
     </div>
     <div class="filter-container">
       <h2 class="filter-title">Filtres :</h2>
       <div class="filter-buttons gap-5">
         <button (click)="filterTools('Tous')"
-                class="px-4 py-2 rounded-full bg-blue-500 hover:bg-blue-700 transition-colors duration-300 flex items-center gap-2 text-white font-semibold shadow-lg">
+                class="filter-button">
           Tous
         </button>
         <button *ngFor="let category of filterList"
                 (click)="filterTools(category)"
-                class="px-4 py-2 rounded-full bg-blue-500 hover:bg-blue-700 transition-colors duration-300 flex items-center gap-2 text-white font-semibold shadow-lg">
+                class="filter-button">
           {{ category }}
         </button>
       </div>
     </div>
     <div class="grid-container">
       <div *ngFor="let tool of filteredTools" class="tool-card">
-        <img [src]="tool.image"
-             [alt]="tool.name"  
-             class="w-full h-48 object-cover mb-4">
-        <h3>{{ tool.name }}</h3>
-        <p>{{ tool.description }}</p>
+        <img [src]="tool.image" [alt]="tool.name" class="w-full h-48 object-cover mb-4">
+        <h3 class="tool-name">{{ tool.name }}</h3>
+        <p #toolDescription class="tool-description">{{ tool.description }}</p>
         <a [href]="tool.lien" pButton label="Voir plus" class="w-full mt-4"></a>
       </div>
+    </div>
   </div>
 </div>

@@ -16,13 +16,14 @@
     border-radius: 25px; /* Coins arrondis */
     padding: 10px 20px; /* Espacement interne */
     width: 300px; /* Largeur de la barre de recherche */
-    background-color: #f0f0f0; /* Couleur de fond */
-    transition: border-color 0.3s; /* Transition pour la bordure */
+    background-color: #f0f4f8; /* Couleur de fond douce */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transition pour la bordure et l'ombre */
 }
 
 .search-input:focus {
     border-color: #2980b9; /* Couleur de bordure au focus */
     outline: none; /* Supprimer le contour par défaut */
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.5); /* Ombre au focus */
 }
 
 .search-button {
@@ -32,18 +33,20 @@
     border-radius: 50%; /* Coins arrondis pour un look moderne */
     padding: 10px; /* Espacement interne */
     cursor: pointer; /* Curseur pointer */
-    transition: background-color 0.3s, transform 0.2s; /* Transition pour l'effet au survol */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Transition pour l'effet au survol */
     margin-left: 10px; /* Espacement à gauche */
-    width: 45px; /* Largeur fixe */
-    height: 45px; /* Hauteur fixe */
+    width: 50px; /* Largeur fixe */
+    height: 50px; /* Hauteur fixe */
     display: flex; /* Centrer l'icône */
     align-items: center; /* Centrer verticalement */
     justify-content: center; /* Centrer horizontalement */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre légère pour le bouton */
 }
 
 .search-button:hover {
     background-color: #2980b9; /* Couleur au survol */
     transform: scale(1.1); /* Légère augmentation au survol */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre plus prononcée au survol */
 }
 
 .search-button img {
@@ -52,42 +55,58 @@
 }
 
 .search-button i {
-    font-size: 20px; /* Ajustez la taille de l'icône si nécessaire */
+    font-size: 22px; /* Ajustez la taille de l'icône si nécessaire */
     line-height: 1; /* Assurez-vous que l'icône est bien centrée */
 }
 
 .tool-card {
-    border-radius: 10px; /* Coins arrondis */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
-    transition: transform 0.2s; /* Animation de transformation */
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Ombre douce */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animation de transformation et d'ombre */
     overflow: hidden; /* Masquer le débordement */
+    background-color: rgba(255, 255, 255, 0); /* Couleur de fond complètement transparente */
+    padding: 20px; /* Espacement interne */
+    margin: 10px; /* Espacement entre les cartes */
 }
 
 .tool-card:hover {
-    transform: scale(1.05); /* Agrandissement au survol */
+    transform: translateY(-5px); /* Légère élévation au survol */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* Ombre plus prononcée au survol */
 }
 
 .p-card-image {
-    border-top-left-radius: 10px; /* Coins arrondis pour l'image */
-    border-top-right-radius: 10px; /* Coins arrondis pour l'image */
+    border-radius: 10px; /* Coins arrondis pour l'image */
     width: 100%; /* Largeur de l'image */
     height: 200px; /* Hauteur fixe pour limiter la taille de l'image */
     object-fit: cover; /* Couvrir l'espace sans déformer l'image */
+    margin-bottom: 15px; /* Espacement en bas de l'image */
 }
 
 .tool-name {
     font-weight: bold; /* Texte en gras */
-    font-size: 1.5rem; /* Taille de police */
+    font-size: 1.6rem; /* Taille de police légèrement augmentée */
     margin: 10px 0; /* Espacement */
+    color: #333; /* Couleur de texte plus foncée pour le nom */
 }
 
 .tool-description {
-    color: #666; /* Couleur de texte gris */
+    color: #444; /* Couleur de texte légèrement plus foncée pour une meilleure lisibilité */
     font-size: 1rem; /* Taille de police */
-    margin-bottom: 10px; /* Espacement en bas */
-    white-space: nowrap; /* Empêche le retour à la ligne */
+    margin-bottom: 15px; /* Espacement en bas */
+    white-space: normal; /* Permet le retour à la ligne */
     overflow: hidden; /* Masque le texte qui déborde */
     text-overflow: ellipsis; /* Affiche des points de suspension (...) pour le texte débordant */
+    display: -webkit-box; /* Utilisation de la boîte flexible pour le clamping */
+    -webkit-box-orient: vertical; /* Orientation verticale */
+    -webkit-line-clamp: 3; /* Limite à 3 lignes */
+    background-color: rgba(255, 255, 255, 0); /* Couleur de fond complètement transparente */
+    padding: 10px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s; /* Transition pour le changement de fond */
+}
+
+.tool-card:hover .tool-description {
+    background-color: rgba(255, 255, 255, 0); /* Changement de couleur de fond au survol pour un effet visuel */
 }
 
 .container {
@@ -116,17 +135,18 @@
 }
 
 .category-button {
-    margin: 0 10px; /* Espacement entre les boutons */
     padding: 10px 15px; /* Espacement interne */
-    background-color: #3498db; /* Couleur de fond */
+    background: linear-gradient(90deg, #3498db, #2980b9); /* Dégradé de couleur */
     color: white; /* Couleur du texte */
     border: none; /* Supprimer la bordure */
     border-radius: 5px; /* Coins arrondis */
     cursor: pointer; /* Curseur pointer */
+    transition: background 0.3s, transform 0.2s; /* Transition pour l'effet au survol */
 }
 
 .category-button:hover {
-    background-color: #2980b9; /* Couleur au survol */
+    background: linear-gradient(90deg, #2980b9, #3498db); /* Dégradé inversé au survol */
+    transform: scale(1.05); /* Légère augmentation au survol */
 }
 
 .filter-container {
@@ -146,18 +166,19 @@
 .filter-button {
     margin: 0 10px; /* Espacement entre les boutons de filtre */
     padding: 10px 20px; /* Espacement interne */
-    background-color: #3498db; /* Couleur de fond */
+    background: linear-gradient(90deg, #3498db, #2980b9); /* Dégradé de couleur */
     color: white; /* Couleur du texte */
     border: none; /* Supprimer la bordure */
     border-radius: 5px; /* Coins arrondis */
     cursor: pointer; /* Curseur pointer */
-    transition: background-color 0.3s, transform 0.2s; /* Transition pour l'effet au survol */
+    transition: background 0.3s, transform 0.2s; /* Transition pour l'effet au survol */
     font-weight: bold; /* Texte en gras pour le bouton */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre légère pour le bouton */
+    margin-bottom: 10px; /* Espacement en bas des boutons */
 }
 
 .filter-button:hover {
-    background-color: #2980b9; /* Couleur au survol */
+    background: linear-gradient(90deg, #2980b9, #3498db); /* Dégradé inversé au survol */
     transform: scale(1.05); /* Légère augmentation au survol */
 }
 
@@ -166,8 +187,8 @@
 }
 
 .filter-title {
-    color: white; /* Couleur blanche pour le titre des filtres */
+    color: #333; /* Couleur de texte plus foncée pour le titre des filtres */
     font-size: 1.5rem; /* Taille de police */
-    margin-bottom: 10px; /* Espacement en bas */
+    margin-bottom: 15px; /* Espacement en bas */
     text-align: center; /* Centrer le texte */
 }

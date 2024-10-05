@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { ToolsService, Tool } from '../../services/outils.service';
@@ -13,11 +13,13 @@ import { CardModule } from 'primeng/card';
   templateUrl: './page-liste.component.html',
   styleUrls: ['./page-liste.component.css']
 })
-export class PageListeComponent implements OnInit {
+export class PageListeComponent implements OnInit, AfterViewInit {
+  @ViewChildren('toolDescription') toolDescriptions!: QueryList<ElementRef>;
+
   searchTerm: string = '';
   tools: Tool[] = [];
   filteredTools: Tool[] = [];
-  filterList: string[] = ['AI', 'Github', 'Analytics'];
+  filterList: string[] = ['AI', 'Github', 'Office'];
 
   constructor(private toolsService: ToolsService) {}
 
@@ -33,6 +35,24 @@ export class PageListeComponent implements OnInit {
       error: (error) => {
         console.error('Error loading tools:', error);
       }
+    });
+  }
+
+  ngAfterViewInit() {
+    this.applyEllipsis();
+    this.toolDescriptions.changes.subscribe(() => {
+      this.applyEllipsis();
+    });
+  }
+
+  applyEllipsis() {
+    this.toolDescriptions.forEach((descriptionEl: ElementRef) => {
+      const element = descriptionEl.nativeElement;
+      element.style.display = '-webkit-box';
+      element.style.webkitBoxOrient = 'vertical';
+      element.style.webkitLineClamp = '3';
+      element.style.overflow = 'hidden';
+      element.style.textOverflow = 'ellipsis';
     });
   }
 
