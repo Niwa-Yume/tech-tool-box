@@ -223,3 +223,44 @@
         margin: 5px; /* Réduire l'espacement entre les cartes */
     }
 }
+
+.dialog-content {
+    padding: 20px; /* Espacement interne pour le contenu du dialogue */
+}
+
+.dialog-title {
+    font-size: 1.8rem; /* Taille de police pour le titre du dialogue */
+    color: #333; /* Couleur du texte */
+    margin: 0; /* Supprimer la marge par défaut */
+    text-align: center; /* Centrer le titre */
+}
+
+.p-card {
+    border-radius: 10px; /* Coins arrondis pour le card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre douce pour le card */
+}
+
+.tool-description {
+    color: #444; /* Couleur de texte légèrement plus foncée pour une meilleure lisibilité */
+    font-size: 1rem; /* Taille de police */
+    margin-bottom: 15px; /* Espacement en bas */
+    line-height: 1.5; /* Hauteur de ligne pour une meilleure lisibilité */
+    white-space: normal; /* Permet le retour à la ligne */
+    overflow: visible; /* Assurez-vous que le texte déborde si nécessaire */
+    text-overflow: clip; /* Ne pas ajouter de points de suspension */
+}
+
+/* Styles pour rendre le dialogue responsive */
+@media (max-width: 768px) {
+    .dialog-content {
+        padding: 10px; /* Réduire l'espacement interne sur mobile */
+    }
+
+    .dialog-title {
+        font-size: 1.5rem; /* Réduire la taille de police sur mobile */
+    }
+
+    .tool-description {
+        font-size: 0.9rem; /* Réduire la taille de police sur mobile */
+    }
+}

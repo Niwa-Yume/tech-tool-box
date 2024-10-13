@@ -10,19 +10,12 @@
     <div class="filter-container">
       <h2 class="filter-title">Filtres :</h2>
       <div class="filter-buttons gap-5">
-        <button (click)="filterTools('Tous')"
-                class="filter-button">
-          Tous
-        </button>
-        <button *ngFor="let category of filterList"
-                (click)="filterTools(category)"
-                class="filter-button">
-          {{ category }}
-        </button>
+        <button (click)="filterTools('Tous')" class="filter-button">Tous</button>
+        <button *ngFor="let category of filterList" (click)="filterTools(category)" class="filter-button">{{ category }}</button>
       </div>
     </div>
     <div class="grid-container">
-      <div *ngFor="let tool of filteredTools" class="tool-card">
+      <div *ngFor="let tool of filteredTools" class="tool-card" (click)="showToolDetails(tool)">
         <img [src]="tool.image" [alt]="tool.name" class="w-full h-48 object-cover mb-4">
         <h3 class="tool-name">{{ tool.name }}</h3>
         <p #toolDescription class="tool-description">{{ tool.description }}</p>
@@ -30,4 +23,22 @@
       </div>
     </div>
   </div>
+
+  <!-- Dialog pour afficher les détails de l'outil -->
+  <p-dialog [(visible)]="displayDialog" [modal]="true" [responsive]="true" header="Détails de l'outil" (onHide)="selectedTool = null" [style]="{'width': '90vw', 'max-width': '600px'}" [baseZIndex]="10000">
+    <ng-container *ngIf="selectedTool">
+      <div class="dialog-content">
+        <p-card>
+          <ng-template pTemplate="header">
+            <h3 class="dialog-title">{{ selectedTool.name }}</h3>
+          </ng-template>
+          <ng-template pTemplate="content">
+            <img [src]="selectedTool.image" [alt]="selectedTool.name" class="w-full h-48 object-cover mb-4">
+            <p class="tool-description">{{ selectedTool.description }}</p>
+            <a [href]="selectedTool.lien" pButton label="Voir plus" class="w-full mt-4"></a>
+          </ng-template>
+        </p-card>
+      </div>
+    </ng-container>
+  </p-dialog>
 </div>

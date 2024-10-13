@@ -5,11 +5,12 @@ import { ToolsService, Tool } from '../../services/outils.service';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { DialogModule } from 'primeng/dialog';
 
 @Component({
   selector: 'app-page-liste',
   standalone: true,
-  imports: [InputTextModule, FormsModule, CommonModule, ButtonModule, CardModule],
+  imports: [InputTextModule, FormsModule, CommonModule, ButtonModule, CardModule, DialogModule],
   templateUrl: './page-liste.component.html',
   styleUrls: ['./page-liste.component.css']
 })
@@ -20,6 +21,9 @@ export class PageListeComponent implements OnInit, AfterViewInit {
   tools: Tool[] = [];
   filteredTools: Tool[] = [];
   filterList: string[] = ['AI', 'Github', 'Office'];
+
+  selectedTool: Tool | null = null;
+  displayDialog: boolean = false; // Assurez-vous que c'est un booléen
 
   constructor(private toolsService: ToolsService) {}
 
@@ -82,5 +86,10 @@ export class PageListeComponent implements OnInit, AfterViewInit {
       ((tool.Categorie || '').toLowerCase().includes(searchTerm))
     );
     console.log('Search results:', this.filteredTools);
+  }
+
+  showToolDetails(tool: Tool) {
+    this.selectedTool = tool;
+    this.displayDialog = true;
   }
 }
