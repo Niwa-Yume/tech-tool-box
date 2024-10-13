@@ -192,3 +192,34 @@
     margin-bottom: 15px; /* Espacement en bas */
     text-align: center; /* Centrer le texte */
 }
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+
+    .search-input {
+        width: 100%; /* La barre de recherche prend toute la largeur */
+    }
+
+    .search-button {
+        width: 40px; /* Ajustement de la largeur du bouton de recherche */
+        height: 40px; /* Ajustement de la hauteur du bouton de recherche */
+    }
+
+    .filter-buttons {
+        flex-direction: column; /* Les boutons de filtre s'empilent sur mobile */
+        align-items: center; /* Centrer les boutons */
+        width: 100%; /* Les boutons prennent toute la largeur */
+    }
+
+    .filter-button {
+        width: 100%; /* Les boutons de filtre prennent toute la largeur */
+        margin-bottom: 10px; /* Espacement entre les boutons */
+        padding: 10px; /* Espacement interne pour un meilleur clic */
+    }
+
+    .tool-card {
+        margin: 5px; /* Réduire l'espacement entre les cartes */
+    }
+}
