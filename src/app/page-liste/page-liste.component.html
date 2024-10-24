@@ -5,7 +5,7 @@
       <input type="text" pInputText [(ngModel)]="searchTerm" (input)="searchTools()" placeholder="Rechercher un outil..." class="search-input">
     </div>
     <div class="filter-container">
-      <h2 class="filter-title texte-white">Filtres :</h2>
+      <h2 class="filter-title text-white">Filtres :</h2>
       <div class="filter-buttons gap-5">
         <button (click)="filterTools('Tous')" class="filter-button">Tous</button>
         <button *ngFor="let category of filterList" (click)="filterTools(category)" class="filter-button">{{ category }}</button>
