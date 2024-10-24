@@ -187,7 +187,7 @@
 }
 
 .filter-title {
-    color: #333; /* Couleur de texte plus foncée pour le titre des filtres */
+    color: white; /* Couleur de texte plus foncée pour le titre des filtres */
     font-size: 1.5rem; /* Taille de police */
     margin-bottom: 15px; /* Espacement en bas */
     text-align: center; /* Centrer le texte */
