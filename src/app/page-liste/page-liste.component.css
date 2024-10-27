@@ -226,13 +226,42 @@
 
 .dialog-content {
     padding: 20px; /* Espacement interne pour le contenu du dialogue */
+    border-radius: 10px; /* Coins arrondis pour un look moderne */
+    background-color: #e0f7fa; /* Fond bleu clair pour une meilleure lisibilité */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Ombre douce */
+    position: relative; /* Positionnement relatif pour le bouton de fermeture */
 }
 
 .dialog-title {
     font-size: 1.8rem; /* Taille de police pour le titre du dialogue */
-    color: #333; /* Couleur du texte */
+    color: #0277bd; /* Couleur du texte en bleu vif */
     margin: 0; /* Supprimer la marge par défaut */
     text-align: center; /* Centrer le titre */
+    padding-bottom: 10px; /* Espacement en bas */
+    text-decoration: none; /* Enlever le soulignement */
+}
+
+.dialog-close-button {
+    background-color: transparent; /* Fond transparent */
+    border: none; /* Pas de bordure */
+    color: #0288d1; /* Couleur du texte pour le bouton de fermeture */
+    font-size: 1.5rem; /* Taille de police */
+    cursor: pointer; /* Curseur pointer */
+    position: absolute; /* Positionnement absolu */
+    top: 10px; /* Position en haut */
+    right: 10px; /* Position à droite */
+    transition: color 0.3s; /* Transition pour le changement de couleur */
+}
+
+.dialog-close-button:hover {
+    color: #03a9f4; /* Couleur au survol */
+}
+
+.dialog-image {
+    border-radius: 10px; /* Coins arrondis pour l'image */
+    width: 100%; /* Largeur de l'image */
+    height: auto; /* Hauteur automatique */
+    margin-bottom: 15px; /* Espacement en bas de l'image */
 }
 
 .p-card {
@@ -241,13 +270,24 @@
 }
 
 .tool-description {
-    color: #444; /* Couleur de texte légèrement plus foncée pour une meilleure lisibilité */
+    color: #01579b; /* Couleur de texte légèrement plus foncée pour une meilleure lisibilité */
     font-size: 1rem; /* Taille de police */
     margin-bottom: 15px; /* Espacement en bas */
     line-height: 1.5; /* Hauteur de ligne pour une meilleure lisibilité */
     white-space: normal; /* Permet le retour à la ligne */
-    overflow: visible; /* Assurez-vous que le texte déborde si nécessaire */
-    text-overflow: clip; /* Ne pas ajouter de points de suspension */
+    overflow: hidden; /* Masque le texte qui déborde */
+    text-overflow: ellipsis; /* Affiche des points de suspension (...) pour le texte débordant */
+    display: -webkit-box; /* Utilisation de la boîte flexible pour le clamping */
+    -webkit-box-orient: vertical; /* Orientation verticale */
+    -webkit-line-clamp: 3; /* Limite à 3 lignes */
+    padding: 10px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s; /* Transition pour le changement de fond */
+    background-color: rgba(255, 255, 255, 0.8); /* Fond légèrement transparent pour le texte */
+}
+
+.tool-card:hover .tool-description {
+    background-color: rgba(240, 240, 240, 0.5); /* Changement de couleur de fond au survol pour un effet visuel */
 }
 
 /* Styles pour rendre le dialogue responsive */
